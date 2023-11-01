@@ -1,9 +1,6 @@
-package com.nixs.bondarenko.andrii.instruments;
+package com.nixs.bondarenko.andrii.tools;
 
-import com.nixs.bondarenko.andrii.abstracts.WritingInstrument;
-
-public class Marker extends WritingInstrument {
-    private static final double FULL_SUBSTANCE = 100;
+public class Marker extends WritingTools {
     private static final double TWENTY_LETTERS = 20;
     private static final double FORTY_LETTERS = 40;
     private int numberOfLetters = 0;
@@ -18,7 +15,7 @@ public class Marker extends WritingInstrument {
         } else {
             returnDouble = ((20 * 1.0) + (20 * 1.09) + (numberOfLetters - 40) * 1.21);
         }
-        return FULL_SUBSTANCE - (double) Math.round(returnDouble * 100) / 100;
+        return (double) Math.round(returnDouble * 100) / 100;
     }
 
     @Override
@@ -37,6 +34,6 @@ public class Marker extends WritingInstrument {
 
     @Override
     public String toString() {
-        return "Marker-- " + getRemainingWritingSubstance();
+        return "Marker - " + "substance: " + getRemainingWritingSubstance();
     }
 }

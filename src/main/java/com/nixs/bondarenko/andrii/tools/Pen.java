@@ -1,15 +1,12 @@
-package com.nixs.bondarenko.andrii.instruments;
+package com.nixs.bondarenko.andrii.tools;
 
-import com.nixs.bondarenko.andrii.abstracts.WritingInstrument;
-
-public class Pen extends WritingInstrument {
-    private static final double FULL_SUBSTANCE = 100;
+public class Pen extends WritingTools {
     private static final double SUBSTANCE_FOR_ONE_LETTER = 1.15;
     private int numberOfLetters = 0;
 
     @Override
     public double getSubstance() {
-        return FULL_SUBSTANCE - (double) Math.round((numberOfLetters * SUBSTANCE_FOR_ONE_LETTER) * 100) / 100;
+        return (double) Math.round((numberOfLetters * SUBSTANCE_FOR_ONE_LETTER) * 100) / 100;
     }
 
     @Override
@@ -28,6 +25,6 @@ public class Pen extends WritingInstrument {
 
     @Override
     public String toString() {
-        return "Pen-- " + getRemainingWritingSubstance();
+        return "Pen - " + "substance: " + getRemainingWritingSubstance();
     }
 }

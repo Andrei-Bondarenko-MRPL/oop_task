@@ -1,7 +1,7 @@
-package com.nixs.bondarenko.andrii.abstracts;
+package com.nixs.bondarenko.andrii.tools;
 
 
-public abstract class WritingInstrument implements Comparable<WritingInstrument> {
+public abstract class WritingTools implements Comparable<WritingTools> {
 
     private double remainingWritingSubstance;
 
@@ -20,7 +20,7 @@ public abstract class WritingInstrument implements Comparable<WritingInstrument>
     public abstract double getSubstance();
 
     @Override
-    public int compareTo(WritingInstrument instrument) {
-        return Double.compare(getRemainingWritingSubstance(), instrument.getRemainingWritingSubstance());
+    public int compareTo(WritingTools tools) {
+        return Double.compare(getRemainingWritingSubstance(), tools.getRemainingWritingSubstance());
     }
 }
