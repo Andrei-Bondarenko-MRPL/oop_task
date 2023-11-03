@@ -1,5 +1,9 @@
 package com.nixs.bondarenko.andrii.tool;
 
+/**
+ * Marker takes 1.0 writing substance for writing of first 20 symbol,
+ * from 21 to 40 symbols takes 1.09, and after that takes 1.21 for each symbols
+ */
 public class Marker extends WritingTools {
     private static final double TWENTY_SYMBOLS = 20;
     private static final double FORTY_SYMBOLS = 40;
@@ -20,11 +24,6 @@ public class Marker extends WritingTools {
             returnDouble = RESULT_TWO_PHASES + (numberOfSymbols - FORTY_SYMBOLS) * COEFFICIENT_THIRD_PHASE;
         }
         return (double) Math.round(returnDouble * 100) / 100;
-    }
-
-    @Override
-    public String erase(StringBuilder builder) {
-        return builder.toString();
     }
 
     @Override

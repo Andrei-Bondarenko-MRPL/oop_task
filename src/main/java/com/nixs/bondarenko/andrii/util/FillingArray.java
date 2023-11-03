@@ -6,6 +6,9 @@ import com.nixs.bondarenko.andrii.tool.WritingTools;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * In this class each tool does record symbols using write method
+ */
 public class FillingArray {
     private static final int FULL_SUBSTANCE = 100;
     private static final int NUMBER_OF_TIMES = 10;
@@ -15,6 +18,10 @@ public class FillingArray {
     private static final int MAX_NUMBERS_CHAR = 122;
     private final ToolsSupplier supplier = new ToolsSupplier();
 
+    /**
+     * This method calls method write fom each tools,
+     * @return sorted tools array by remainder writing substance
+     */
     public WritingTools[] getFilledArray() {
         WritingTools[] tools = supplier.getArrayOfTools();
         for (WritingTools tool : tools) {
@@ -31,6 +38,10 @@ public class FillingArray {
         return tools;
     }
 
+    /**
+     * This method uses class Random for remaining char array. Array capacity for 3 to 5 characters
+     * @return random char array
+     */
     private char[] getArrayChars() {
         Random random = new Random();
         char[] chars = new char[random.nextInt(MIN_TIMES, MAX_TIMES)];
